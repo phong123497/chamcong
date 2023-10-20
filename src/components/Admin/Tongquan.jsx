@@ -1,11 +1,31 @@
 import React from "react";
+import { useState } from "react";
 import Box from "@mui/material/Box";
-import logo from "../../image/logo.svg";
-import account from "../../image/account.svg";
+
 import kosin from "../../image/kosin.svg";
 import CustomBox from "../common/CustomBox";
-import { Link } from "react-router-dom/dist";
+import CustomTable from "../common/CustomTable";
+import Navigation from "../common/Navigation";
+import CustomModal from "../common/CustomModal"
 function Tongquan() {
+  const [open, setOpen] = useState(false)
+  const handleCloseFromChild = () => {
+    setOpen(false); 
+  };
+  const showGoToWork = () => {
+    setOpen(true)
+  };
+  
+  const showLate=()=>{
+    setOpen(true)  
+  }
+  const showNotComing=()=>{
+    setOpen(true)
+  }
+  const showOnLeave=()=>{
+    setOpen(true)
+  }
+
   return (
     <Box
       sx={{
@@ -17,62 +37,9 @@ function Tongquan() {
         flexDirection: "column"
       }}
     >
-      {/* heading */}
-      <Box
-        sx={{
-          minWidth: "1280px",
-          height: "60px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          borderBottom: "1px solid #F0F0F0",
-          position: "sticky"
-        }}
-      >
-        <Box display="flex" alignItems="center" justifyContent="center">
-          <Box marginRight="48px">
-            <img src={logo} alt="rikkeiLogo" />
-          </Box>
-
-          <Box display="flex" alignItems="center" justifyContent="center">
-            <Box className="item-heading">
-              <Link className="link-heading">
-                <h2 className="title-heading">Tổng quan</h2>
-              </Link>
-            </Box>
-
-            <Box className="item-heading">
-              <Link className="link-heading">
-                <h2 className="title-heading">Nhân sự</h2>
-              </Link>
-            </Box>
-
-            <Box className="item-heading">
-              <Link className="link-heading">
-                <h2 className="title-heading">Thống kê</h2>
-              </Link>
-            </Box>
-            <Box className="item-heading">
-              <Link className="link-heading">
-                <h2 className="title-heading">QRCode Checkin</h2>
-              </Link>
-            </Box>
-
-            <Box />
-          </Box>
-        </Box>
-
-        {/* icon admin */}
-        <Box display="flex" alignItems="center">
-          <img src={account} alt="" />
-          <h2
-            className="title-heading"
-            style={{ fontWeight: "400", paddingLeft: "4px" }}
-          >
-            admin
-          </h2>
-        </Box>
-      </Box>
+      <CustomModal isOpen={open} handleClose={handleCloseFromChild}/>
+      {/* navigation */}
+      <Navigation/>
       {/* titile */}
       <Box
         sx={{
@@ -122,6 +89,8 @@ function Tongquan() {
             width="300px"
             borderRadius="10px"
             marginBottom="8px"
+            onclick={showGoToWork}
+
           />
 
           <CustomBox
@@ -133,6 +102,7 @@ function Tongquan() {
             borderRadius="10px"
             marginBottom="8px"
             colorTitle="#FFD93D"
+            onclick={showLate}
           />
 
           <CustomBox
@@ -144,6 +114,7 @@ function Tongquan() {
             width="300px"
             borderRadius="10px"
             marginBottom="8px"
+            onclick={showNotComing}
           />
 
           <CustomBox
@@ -155,74 +126,80 @@ function Tongquan() {
             width="300px"
             borderRadius="10px"
             marginBottom="8px"
+            onclick={showOnLeave}
           />
         </Box>
       </Box>
 
       {/* detail */}
-      <Box className="display-flex1280" marginTop="16px"> 
+      <Box className="display-flex1280" marginTop="16px"  gap="10px"> 
         <Box  display="flex" justifyContent="space-between" marginBottom="16px" >
         <h4
             className="title-text"
             style={{ fontSize: "14px", fontWeight: "400" }}
           >
             Lịch sử chấm công
-          </h4>
-          <h4 className="title-text" style={{ fontSize: "14px" }}>
-            08:56:32 thứ 3 ngày 03 tháng 10
-          </h4>
+        </h4>
+        <Box>
+          
+        </Box>
+        </Box>
+        
+        <Box display="flex" justifyContent="space-between">
+        
+        <CustomBox
+            title="T2 2 Th.10"
+            detail="Chi tiết"
+            border ="1px solid #303E65"
+            fontTitle="12px"
+            fontDetail="12px"
+          />
+        <CustomBox
+            title="T2 2 Th.10"
+            detail="Chi tiết"
+            border ="1px solid #303E65"
+            fontTitle="12px"
+            fontDetail="12px"
+          />
+        <CustomBox
+            title="T2 2 Th.10"
+            detail="Chi tiết"
+            border ="1px solid #F0F0F0"
+            fontTitle="12px"
+            fontDetail="12px"
+          />
+        <CustomBox
+            title="T2 2 Th.10"
+            detail="Chi tiết"
+            border ="1px solid #F0F0F0"
+            fontTitle="12px"
+            fontDetail="12px"
+          />
+        <CustomBox
+            title="T2 2 Th.10"
+            detail="Chi tiết"
+            border ="1px solid #F0F0F0"
+            fontTitle="12px"
+            fontDetail="12px"
+          />
+        <CustomBox
+            title="T2 2 Th.10"
+            detail="Chi tiết"
+            border ="1px solid #F0F0F0"
+            fontTitle="12px"
+            fontDetail="12px"
+          />
+        <CustomBox
+            title="T2 2 Th.10"
+            detail="Chi tiết"
+            border ="1px solid #F0F0F0"
+            fontTitle="12px"
+            fontDetail="12px"
+          />
         </Box>
 
-        <Box display="flex" justifyContent="space-between">
-        <CustomBox
-            title="T2 2 Th.10"
-            detail="Chi tiết"
-            border ="1px solid #303E65"
-            fontTitle="12px"
-            fontDetail="12px"
-          />
-        <CustomBox
-            title="T2 2 Th.10"
-            detail="Chi tiết"
-            border ="1px solid #303E65"
-            fontTitle="12px"
-            fontDetail="12px"
-          />
-        <CustomBox
-            title="T2 2 Th.10"
-            detail="Chi tiết"
-            border ="1px solid #F0F0F0"
-            fontTitle="12px"
-            fontDetail="12px"
-          />
-        <CustomBox
-            title="T2 2 Th.10"
-            detail="Chi tiết"
-            border ="1px solid #F0F0F0"
-            fontTitle="12px"
-            fontDetail="12px"
-          />
-        <CustomBox
-            title="T2 2 Th.10"
-            detail="Chi tiết"
-            border ="1px solid #F0F0F0"
-            fontTitle="12px"
-            fontDetail="12px"
-          />
-        <CustomBox
-            title="T2 2 Th.10"
-            detail="Chi tiết"
-            border ="1px solid #F0F0F0"
-            fontTitle="12px"
-            fontDetail="12px"
-          />
-        <CustomBox
-            title="T2 2 Th.10"
-            detail="Chi tiết"
-            border ="1px solid #F0F0F0"
-            fontTitle="12px"
-            fontDetail="12px"
-          />
+        <Box>
+          <CustomTable/>
         </Box>
       </Box>
     </Box>

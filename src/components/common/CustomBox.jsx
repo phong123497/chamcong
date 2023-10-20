@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 function CustomBox({...props}) {
   return (
     <Box
+      onClick={props.onclick}
       sx={{
         width: props.width||"166px",
         height: props.height||"52px",
@@ -22,6 +23,7 @@ function CustomBox({...props}) {
     >
       <Link
         className="link-heading"
+        to ={props.Link}
       >
         <Typography
           sx={{

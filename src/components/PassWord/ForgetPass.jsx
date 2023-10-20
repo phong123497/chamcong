@@ -77,7 +77,7 @@ function ForgetPass() {
               sẽ được gửi về!
             </h3>
           </Box>
-          <Box className="flexCenter">
+          <Box className="flexCenter_column">
             <Box marginBottom="16px">
               <h3
                 className="input-text"

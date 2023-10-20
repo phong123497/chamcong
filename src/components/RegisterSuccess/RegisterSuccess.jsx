@@ -51,7 +51,7 @@ function RegisterSuccess() {
               Đăng ký thành công
             </h3>
           </Box>
-          <Box className="flexCenter" >
+          <Box className="flexCenter_column" >
             <Box marginBottom="8px">
               <h3 className="input-text" style={{fontSize:"20px", fontWeight:"400", color:"rgba(48, 62, 101, 0.50)"}}>
                 Bạn đã đăng kí tài khoản thành công cho

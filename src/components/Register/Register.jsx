@@ -49,7 +49,7 @@ function Register() {
               Đăng ký
             </h2>
           </Box>
-          <Box className="flexCenter">
+          <Box className="flexCenter_column">
             <Box>
               <h3 className="input-text">Tên tài khoản</h3>
               <CustomInput type="text" placeholder="Nhập tên tài khoản" />
